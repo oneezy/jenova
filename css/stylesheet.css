@@ -1,0 +1,167 @@
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++ JENOVA (Official Website) ++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Designed By: Justin O'Neill
+*/
+
+
+/* ------------- DEFAULT STYLES ------------- */
+* { margin:0; padding:0; border: none; text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 16px;  color: #000000; }
+* :focus { outline: 0; }
+
+html { margin:0; padding:0; min-height:400px; }
+body { margin:0; padding:0; min-height:400px;}
+a, a:link, a:visited, a:active, a:hover { color:#00a1fe; text-decoration:none; }
+h1 { margin:0; padding:0; color:white; font-size:36px; }
+br { clear:both; display:block; padding:0; margin:0; width:0; height:0; }
+p { padding:20px 0; color:white; opacity:1; }
+ul { list-style:none; }
+input[type="text"] { background:white; border: 1px solid black; border-radius:6px; margin-bottom: 1px; padding: 5px 8px; width:115px; color:black; }
+input[type="text"]:focus { color:black; }
+textarea { background: white; border:1px solid black; padding:4px 8px; border-radius:6px; -moz-border-radius:6px; width:115px; color:black; }
+textarea:focus { color:black; }
+input[type="submit"] { cursor:pointer; }
+input[type="reset"] { cursor:pointer; }
+table, tr, td { margin:0; padding:0; }
+
+/* ------------- SPECIAL STYLES ------------- */
+p.clear { clear:both; padding:0; margin:0; width:0; height:0; }
+
+/* ------------- LAYOUT ------------- */
+body { background:black; }
+
+.header { position:fixed; top:35px; left:50%; height:50px; width:830px; margin-left:-415px; z-index:10; }
+.bg-controller { background:#002f47; width:100%; height:9px; position:fixed; bottom:-1px; left:0; right:0; z-index:5; }
+.content { padding:20px; position:fixed; top:110px; left:50%; height:250px; max-height:250px; min-height:250px; width:760px; min-width:760px; max-width:760px; margin-left:-407px; z-index:3; color:white; overflow:hidden; display:none; }
+
+#ManStand { position:fixed; bottom:275px; left:50%; height:161px; width:75px; margin-left:-38px; z-index:5; } /* Big Man you see above the logo */
+#ManStandTransform02 { position:fixed; bottom:262px; left:50%; height:195px; width:46px; margin-left:-24px; z-index:5; display:none; } /* Big Man dissapears */
+#ManFly { position:fixed; bottom:50%; left:0; height:100px; width:233px; margin-left:-233px; z-index:5; } /* Big Man flys in from the left */
+#ManFlyTransform01 { position:fixed; bottom:50%; left:30%; height:78px; width:274px; z-index:5; margin-left:-265px; display:none; } /* Big Man dissapears while flying */
+#ManFlyTransform02 { position:fixed; bottom:50%; left:30%; height:50px; width:400px; z-index:5; margin:0 0 15px -265px; display:none; } /* Big Man flys lightspeed away! */
+#ManFlyTransform03 { position:fixed; top:55px; left:0; height:16px; width:75px; z-index:5; margin-left:-500px; z-index:10; } /* Little Man flys lightspeed from top left */
+#ManFlyTransform04 { position:fixed; top:10px; left:50%; height:100px; width:47px; z-index:5; margin-left:-490px; z-index:10; display:none; } /* Little Man transforms */
+#ManFlyTransform05 { position:fixed; top:10px; left:50%; width:46px; z-index:5; margin-left:-490px; z-index:10; display:none; } /* Little Man standing on top left */
+
+#LightSpeedStars01 { position:fixed; bottom:70%; right:0; height:50px; width:400px; z-index:7; margin:0 0 0 -265px; display:none; } /* Lightspeed Stars from right! */
+#LightSpeedStars02 { position:fixed; bottom:140px; right:0; height:50px; width:400px; z-index:7; margin:0 0 0 -265px; display:none; } /* Lightspeed Stars from right! */
+#LightSpeedStars03 { position:fixed; bottom:42%; right:0; height:50px; width:400px; z-index:7; margin:0 0 0 -265px; display:none; } /* Lightspeed Stars from right! */
+
+#Jenova { position:fixed; bottom:52px; left:50%; height:200px; width:560px; margin-left:-280px; z-index:4; }
+#JenovaLighted { position:fixed; bottom:52px; left:50%; height:200px; width:560px; margin-left:-280px; z-index:5; display:none; }
+
+#SunNormal { background:url("../images/sun-normal.jpg") no-repeat 50% 0; width:2464px; height:425px; position:fixed; bottom:0; left:50%; margin-left:-1200px; z-index:1; }
+#SunOverlap { background:url("../images/sun-overlap.png") no-repeat 50% 0; width:2464px; height:425px; position:fixed; bottom:0; left:50%; margin-left:-1200px; z-index:3; }
+#StarsNormal { background:url("../images/stars-normal.png") repeat 50% 0; position:fixed; left:0; right:0; top:0; bottom:0; z-index:2; margin-left:-50px; }
+.wrapper {  }
+
+/* ------------- HEADER ------------- */
+.header ul { text-align:center; }
+.header li { float:left; text-align:center; }
+.header a { background:url("../images/button-unselected02.png") no-repeat 0 0; display:block; width:158px; height:52px; margin-left:10px; text-align:center; text-transform:uppercase; }
+.header a.hover { background:url("../images/button-unselected02.png") no-repeat 0 -52px; }
+.header a.selected { background:url("../images/button-selected02.png") no-repeat 0 0; display:block; width:158px; height:52px; text-align:center; text-transform:uppercase; cursor:default; }
+.header span { background:transparent; color:white; display:block; font-size:21px; letter-spacing:-2px; padding:12px 0; text-align:center; text-shadow:1px 1px 0 black; }
+
+/* Tour */
+#ManFlyTransformTour01 { position:fixed; top:55px; left:0; height:16px; width:75px; z-index:5; margin-left:-300px; z-index:10; } /* Lil Man flys lightspeed from top left */
+#ManFlyTransformTour02 { position:fixed; top:10px; left:50%; height:100px; width:47px; z-index:5; margin-left:-275px; z-index:10; display:none; } /* Lil Man transforms */
+#ManFlyTransformTour03 { position:fixed; top:10px; left:50%; width:46px; z-index:5; margin-left:-275px; z-index:10; display:none; } /* Lil Man standing on top left */
+
+#MusicPlayer { background:transparent; width:250px; height:250px; z-index:2; position:fixed; bottom:-250px; left:50%; margin:0 0 0 -125px; }
+
+
+/* ------------- HOME PAGE ------------- */
+.jenova-is { font-family:"Times New Roman", Times, serif; font-size:27px; text-align:center; font-style:italic; line-height:23px; }
+
+
+/* ------------- LYRICS PAGE ------------- */
+#SongLyrics { position:fixed; top:130px; right:50%; margin-right:-350px; }
+#SongLyrics a { display:block; float:left; border-right:1px solid white; color:#00A1FE; padding:7px 10px; }
+h2 { font-family:"Times New Roman", Times, serif; font-size:36px; text-align:left; color:#00A1FE; margin:0; padding-bottom:10px; line-height:27px; }
+pre { color:white; font-size:14px; }
+
+/* ------------- SHOWS PAGE ------------- */
+.venue { color:#00a1fe; width:150px; text-decoration:none; }
+.location { color:grey; width:150px; }
+.date { color:white; width:100px; }
+
+
+/* ------------- GEAR PAGE ------------- */
+div#Gear .jenova-white { background:url("../images/shirt-white.png") no-repeat 0 0; width:176px; height:227px; float:left; position:relative; }
+div#Gear .jenova-black { background:url("../images/shirt-black.png") no-repeat 0 0; width:176px; height:227px; float:left; margin-left:20px; position:relative; }
+div#Gear .jenova-pink { background:url("../images/shirt-pink.png") no-repeat 0 0; width:176px; height:227px; float:left; margin-left:20px; position:relative; }
+div#Gear .jenova-blue { background:url("../images/shirt-blue.png") no-repeat 0 0; width:176px; height:227px; float:left; margin-left:20px; position:relative; }
+
+div#Gear { padding:20px; padding-left:40px; position:fixed; top:110px; left:50%; height:250px; max-height:250px; min-height:250px; width:960px; min-width:960px; max-width:960px; margin-left:-525px; z-index:3; color:white; overflow:hidden; display:none; }
+
+.space { padding-left:48px; }
+.form-bg { background:url("../images/select-buy.png") no-repeat 0 0; position:absolute; bottom:0; left:-40px; width:264px; height:59px; }
+.select-white { position:absolute; left:23px; bottom:20px; width:155px; height:25px; background:black; color:black; font-size:12px; display:block; border:0; opacity:0; filter:alpha(opacity=0); zoom:1; }
+.select-white option { color:white; font-size:12px; }
+.select-black { position:absolute; left:23px; bottom:20px; width:155px; height:25px; background:black; color:black; font-size:12px; display:block; border:0; opacity:0; filter:alpha(opacity=0); zoom:1; }
+.select-black option { color:white; font-size:12px; }
+.select-pink { position:absolute; left:23px; bottom:20px; width:155px; height:25px; background:black; color:black; font-size:12px; display:block; border:0; opacity:0; filter:alpha(opacity=0); zoom:1; }
+.select-pink option { color:white; font-size:12px; }
+.select-blue { position:absolute; left:23px; bottom:20px; width:155px; height:25px; background:black; color:black; font-size:12px; display:block; border:0; opacity:0; filter:alpha(opacity=0); zoom:1; }
+.select-blue option { color:white; font-size:12px; }
+.span-white { color:white; display:block; position:absolute; margin:8px 0 0 15px; font:bold 11px Arial,Helvetica,sans-serif; padding:6px 10px; }
+.span-black { color:white; display:block; position:absolute; margin:8px 0 0 15px; font:bold 11px Arial,Helvetica,sans-serif; padding:6px 10px; }
+.span-pink { color:white; display:block; position:absolute; margin:8px 0 0 15px; font:bold 11px Arial,Helvetica,sans-serif; padding:6px 10px; }
+.span-blue { color:white; display:block; position:absolute; margin:8px 0 0 15px; font:bold 11px Arial,Helvetica,sans-serif; padding:6px 10px; }
+.buy-now { background:transparent; bottom:21px; height:33px; position:absolute; right:13px; width:74px; text-indent:-99999px; }
+
+
+/* ------------- BOOKING PAGE ------------- */
+div#Contact form { display:block; padding-top:40px; }
+div#Contact div { width:200px; float:left; margin-left:20px; height:100px; }
+div#Contact input[type="text"] { width:200px; }
+
+div#Contact textarea { width:200px; min-width:200px; max-width:200px; height:88px; min-height:88px; max-height:88px; }
+
+.clear { background:url("../images/clear-submit.png") no-repeat 0 0; float:left; width:117px; height:33px; text-indent:-99999px; }
+.clear:hover { background:url("../images/clear-submit.png") no-repeat 0 -33px; }
+.submit { background:url("../images/clear-submit.png") no-repeat -117px 0; float:left; width:117px; height:33px; text-indent:-99999px; }
+.submit:hover { background:url("../images/clear-submit.png") no-repeat -117px -33px; }
+
+.span-class { font-family:"Times New Roman", Times, serif; text-align:center; color:white; font-style:italic; margin:0 auto; display:block; }
+
+
+/* ------------- MUSIC PLAYER ------------- */
+#JPplaylist { background:#0c0c0c; position:fixed; bottom:-500px; left:50%; width:275px; margin-left:-142px; z-index:5; padding:5px 4px 4px 4px; border:1px solid #272727; border-radius:4px; }
+#Controller { background:url("../images/controller.png") no-repeat 0 0; width:378px; height:55px; position:fixed; z-index:10; left:50%; bottom:-2px; margin:-45px 0 0 -189px; }
+.bg-controls { background:url("../images/controller.png") no-repeat 0 0; width:378px; height:55px; position:relative; z-index:10; }
+
+.jp-previous { background:url("../images/controller-sprites.png") no-repeat 0 0; position:absolute; left:16px; top:16px; display:block; width:22px; height:22px; text-indent:-99999px; }
+.jp-previous:hover { background:url("../images/controller-sprites.png") no-repeat 0 -20px; }
+.jp-play { background:url("../images/controller-sprites.png") no-repeat -72px 0; position:absolute; left:44px; top:16px; display:block; width:15px; height:22px; text-indent:-99999px; }
+.jp-play:hover { background:url("../images/controller-sprites.png") no-repeat -72px -20px; position:absolute; }
+.jp-pause { background:url("../images/controller-sprites.png") no-repeat -26px 0; position:absolute; left:42px; top:16px; display:block; width:15px; height:22px; text-indent:-99999px; }
+.jp-pause:hover { background:url("../images/controller-sprites.png") no-repeat -26px -20px; }
+.jp-next { background:url("../images/controller-sprites.png") no-repeat -50px 0; position:absolute; left:66px; top:16px; display:block; width:22px; height:22px; text-indent:-99999px; }
+.jp-next:hover { background:url("../images/controller-sprites.png") no-repeat -50px -20px; }
+
+.jp-progress { background:url("../images/controller-sprites.png") no-repeat 0 -42px; width:192px; height:9px; position:absolute; top:20px; left:97px; }	
+.jp-seek-bar { background:url("../images/controller-sprites.png") no-repeat 0 -42px; width:0; height:100%; }
+.jp-play-bar { background:url("../images/controller-sprites.png") no-repeat 0 -54px; width:0; height:100%; }
+
+.jp-shuffle { background:url("../images/controller-sprites.png") no-repeat -31px -66px; position:absolute; left:334px; top:15px; display:block; width:24px; height:21px; text-indent:-99999px; }
+.jp-shuffle:hover { background:url("../images/controller-sprites.png") no-repeat -31px -87px; }
+.jp-shuffle-off { background:url("../images/controller-sprites.png") no-repeat -31px -108px; position:absolute; left:334px; top:15px; display:block; width:24px; height:21px; text-indent:-99999px; }
+.jp-repeat { background:url("../images/controller-sprites.png") no-repeat -5px -66px; position:absolute; left:308px; top:15px; display:block; width:24px; height:21px; text-indent:-99999px; }
+.jp-repeat:hover { background:url("../images/controller-sprites.png") no-repeat -5px -87px; }
+.jp-repeat-off { background:url("../images/controller-sprites.png") no-repeat -5px -108px; position:absolute; left:308px; top:15px; display:block; width:24px; height:21px; text-indent:-99999px; }
+
+.jp-playlist ul { list-style:none; }
+.jp-playlist li { background:url("../images/playlist-selects.png") no-repeat 0 -26px; width:275px; height:26px; display:block; text-indent:30px; }
+.jp-playlist li:hover { background:url("../images/playlist-selects.png") no-repeat 0 -52px; }
+.jp-playlist li a { color:#bcbcbc; font-size:12px; line-height:26px; display:block; text-shadow:1px 1px 0 black; }
+.jp-playlist li a:hover { color:#2ab7ff; }
+li.jp-playlist-current { background:url("../images/playlist-selects.png") no-repeat 0 0; width:275px; height:26px; display:block; text-indent:30px; display:block; }
+li.jp-playlist-current:hover { background:url("../images/playlist-selects.png") no-repeat 0 0; width:275px; height:26px; display:block; text-indent:30px; display:block; }
+li.jp-playlist-current a { color:white; text-shadow:1px 1px 0 black; font-size:12px; line-height:26px; display:block; }
+li.jp-playlist-current a:hover { color:white; text-shadow:1px 1px 0 black; font-size:12px; line-height:26px; display:block; }
