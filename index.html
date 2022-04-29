@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>::: JENOVA :::</title>
+  <meta name="description" content="We are Jenova~" />
+  <meta name="keywords" content="jenova, jenova band, jenova music" />
+
+  <!-- Meta Information -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=8, FF=3, OtherUA=4,IE=edge, chrome=1">
+  <meta name="msvalidate.01" content="764F63CCDDF4ADE7257F85D6FC724DDF" />
+  <meta property="og:image" content="http://jenovaishere.com/images/man-stand.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" media="all" href="css/stylesheet.css" />
+  
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+  <!-- Animation -->
+  <script type="text/javascript" src="js/animation.js"></script>
+
+  <!-- Stars Scroll -->
+  <script type="text/javascript" src="js/stars.js"></script>
+
+  <!-- Form Validation -->
+  <script type="text/javascript" src="js/validate.js"></script>
+
+  <!-- Form Focus -->
+  <script type="text/javascript" src="js/on-form-focus.js"></script>
+
+  <!-- jPlayer -->
+  <script type="text/javascript" src="js/jplayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="js/jplayer/jplayer.playlist.min.js"></script>
+
+  <!-- Scrolling Stars -->
+  <script type="text/javascript">
+    var scrollSpeed = 70; // speed in milliseconds
+    var current = 0; // set the default position
+    var direction = 'h'; // set the direction
+
+    function bgscroll() {
+      current -= 1; // 1 pixel row at a time
+      $("#StarsNormal").css("backgroundPosition", (direction == 'h') ? current + "px 0" : "0 " + current + "px"); 
+    }
+
+    setInterval("bgscroll()", scrollSpeed); //Calls the scrolling function repeatedly
+  </script>
+
+  <!-- Select Box BG's -->
+  <script type="text/javascript">
+    $(function () {
+      $(".select-white").change(function () {
+        $(".span-white").html($(this).val());
+      })
+
+      $(".select-black").change(function () {
+        $(".span-black").html($(this).val());
+      })
+
+      $(".select-pink").change(function () {
+        $(".span-pink").html($(this).val());
+      })
+
+      $(".select-blue").change(function () {
+        $(".span-blue").html($(this).val());
+      })
+    })
+  </script>
+
+  <!-- Songs (jPlayer) -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      new jPlayerPlaylist({
+        jPlayer: "#jquery_jplayer_1",
+        cssSelectorAncestor: "#jp_container_1"
+      }, [{
+          title: "Haste (demo)",
+          mp3: "/music/jenova-haste.mp3",
+          oga: "/music/jenova-haste.ogg"
+        },
+        {
+          title: "Stand Up (demo)",
+          mp3: "/music/jenova-standup.mp3",
+          oga: "/music/jenova-standup.ogg"
+        },
+        {
+          title: "Energy (demo)",
+          mp3: "/music/jenova-energy.mp3",
+          oga: "/music/jenova-energy.ogg"
+        }
+      ], {
+        swfPath: "js/jplayer",
+        supplied: "ogg, mp3",
+        wmode: "window"
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <ul>
+      <li><a href="#" id="home" class="selected" style="margin-left:0;"><span>Jenova&nbsp;&nbsp;Is...</span></a></li>
+      <li><a href="#" id="songs"><span>Lyrics</span></a></li>
+      <li><a href="#" id="shows"><span>Shows</span></a></li>
+      <li><a href="#" id="gear"><span>Gear</span></a></li>
+      <li><a href="#" id="booking"><span>Booking</span></a></li>
+    </ul>
+  </div><img id="ManFlyTransformTour01" alt="Man" src="images/man-fly-transform03.png" /> <img
+    id="ManFlyTransformTour02" alt="Man" src="images/man-stand-transform02.png" /> <img id="ManFlyTransformTour03"
+    alt="Man" src="images/man-stand.png" />
+  <div id="StarsNormal"></div><img id="Jenova" alt="Jenova" src="images/logo.png" /> <img id="JenovaLighted"
+    alt="Jenova" src="images/logo-lighted.png" /> <img id="ManStand" alt="Man" src="images/man-stand.png" /> <img
+    id="ManStandTransform02" alt="Man" src="images/man-stand-transform02.png" /> <img id="ManFly" alt="Man"
+    src="images/man-fly.png" /> <img id="ManFlyTransform01" alt="Man" src="images/man-fly-transform01.png" /> <img
+    id="ManFlyTransform02" alt="Man" src="images/man-fly-transform02.png" /> <img id="ManFlyTransform03" alt="Man"
+    src="images/man-fly-transform03.png" /> <img id="ManFlyTransform04" alt="Man"
+    src="images/man-stand-transform02.png" /> <img id="LightSpeedStars01" alt="Man"
+    src="images/man-fly-transform02.png" /> <img id="LightSpeedStars02" alt="Man"
+    src="images/man-fly-transform02.png" /> <img id="LightSpeedStars03" alt="Man"
+    src="images/man-fly-transform02.png" /> <img id="ManFlyTransform05" alt="Man" src="images/man-stand.png" />
+  <div id="SunNormal"></div>
+  <div id="SunOverlap"></div>
+  <div id="Home" class="content">
+    <p class="jenova-is"></p>
+  </div>
+
+  <!-- Lyrics -->
+  <div id="Lyrics" class="content" style="overflow:auto; height:200px; min-height:200px; max-height:200px; margin-top:20px; padding-top:0;">
+    <div style="position:relative;">
+
+      <div id="SongLyrics">
+        <a href="#haste">Haste</a>
+        <a href="#stand-up">Stand Up</a>
+        <a href="#energy" style="border:none;">Energy</a>
+      </div>
+
+      <a style="float:left;" name="haste"></a>
+      <h2>Haste (demo)</h2>
+      <pre style="padding-bottom:40px;">
+      From the day it was drawn
+      They knew it was a disaster!
+      Hurricane winds can sweep away
+      theres noo way to stay away from those of outside waves! (yeah)
+      Tremendous the destruction is Endless!
+      Obstructing the views that you choose
+      now thats diminished!
+      Life as Endless!
+      With no dependence 
+      ya still stuck out from the outside!
+      
+      How ya gonna hold me back?
+      When theres a suicidal rage that can attack!
+      
+      Never gonna hold me back!
+      Suicidal rage to Attack!
+      
+      
+      You walking a thin line!
+      Its a furious fate!
+      and enough to hasten up the prime time!
+      aint nuthing else straight!
+      you can get it in your face!
+      
+      
+      You walking a thin line!
+      Its a furious fate!
+      and enough to hasten up the prime time!
+      aint nuthing else straight!
+      you can get it in your face!
+      
+      
+      You walking a thin line!
+      Its a furious fate!
+      and enough to hasten up the prime time!
+      aint nuthing else straight!
+      you can get it in your face!
+      
+      So whats next how can i say it?
+      Have i ever been so edged to what a human said?
+      Dont they know theres a power to judge dredge 
+      to make them run scared! 
+      to make them get under there bunk bed!
+      make them tuck that shit
+      when i paint the city red
+      when i spray it
+      OPEN MY MIND FUCK THE INFLUENCE	
+      Its a give or take 
+      so get ready for this mother fucking Break!
+      
+      For what it is you see
+      The powers above and against me!
+      Im innocent til proven guilty 
+      but im guilty for not wanting to be!
+      For our eyes never blind to the truth!
+      thers a gain and a loss in the pursuit
+      For our eyes never blind to the truth!
+      Our eyes never blind!
+      
+      For what it is you see
+      The powers above and against me!
+      Im innocent til proven guilty 
+      but im guilty for not wanting to be!
+      For our eyes never blind to the truth!
+      thers a gain and a loss in the pursuit
+      For our eyes never blind to the truth!
+      Our eyes never blind!
+      
+      From the day it was drawn
+      They knew it was a disaster!
+      Hurricane winds can sweep away!
+      No way to stay away Boy!
+      GET BACK AND FEEL what im Saying!
+      Get Back!
+      Make Haste!!
+      </pre>
+
+      <a style="float:left;" name="stand-up"></a>
+      <h2>Stand Up (demo)</h2>
+      <pre style="padding-bottom:40px;">
+      SO SHUT THE FUCK UP AND GET UP
+      THIS AINT NO FUCKIN NAP TIME
+      CUZ THIS TIME ITS SERIOUS AND
+      AND THIS IS HOW ITS GOING DOWN
+      HOLDING NOW
+      KEYS TO AN EVOLUTION
+      THAT IS NEWLY FOUND
+      A UNION BOUND
+      a new type of REVOLUTION
+      with a wicked style
+      wicked for days
+      wicked in ways
+      that u never seen wicked displayed
+      so wicked this played
+      for you to feel it
+      so get up and DONT CONCEAL IT (run with it)
+      and when you hear it
+      everybody 
+      ALL U GOT TO DO IS
+      
+      STAND UP
+      STAND UP
+      STAND UP
+      STAND UP!
+      
+      
+      just by any means 
+      necessary is what it means 
+      just by any means
+      necessary is what it means 
+      just by any means
+      necessary is what it means just to
+      
+      STAND UP
+      STAND UP
+      STAND UP
+      STAND UP!
+      
+      
+      just by any means 
+      necessary is what it means 
+      just by any means
+      necessary is what it means 
+      just by any means
+      necessary is what it means just to
+      
+      STAND UP
+      STAND UP
+      STAND UP
+      STAND UP!
+      
+      HUAAAAAAAAAA!
+      
+      SO STAND UP EVERYBODY FOR HUMANITY!
+      
+      GET UP EVERYBODY W insanity!
+      
+      STAND UP ALL MY PEOPLE ON THE FRONT LINES!
+      
+      GET up EVERYBODY HAVING HARDTIMES!
+      
+      now is your time 
+      now is your chance
+      to take wuts urs
+      to make the find
+      to free ur mind
+      and take a stance
+      
+      yours and mine
+      together w all
+      together we fall
+      but wont stop
+      until its seen at first glance
+      
+      now is your time 
+      now is your chance
+      to take wuts urs
+      to make the find
+      to free ur mind
+      and take a stance
+      
+      yours and mine
+      together w all
+      together we fall
+      but wont stop
+      until its seen at first glance
+      
+      just by any means 
+      necessary is what it means 
+      just by any means
+      necessary is what it means 
+      just by any means
+      necessary is what it means just to
+      
+      STAND UP
+      STAND UP
+      STAND UP
+      STAND UP!
+      
+      
+      just by any means 
+      necessary is what it means 
+      just by any means
+      necessary is what it means 
+      just by any means
+      necessary is what it means just to
+      
+      STAND UP
+      STAND UP
+      STAND UP
+      STAND UP!
+      
+      HUAAAAAAAAAA!
+      
+      
+      STAND UP FOR THE KEYS OF A NEW REVOLUTION
+      
+      GET UP AND DONT FORGET WHERE YOU CAME FROM
+      
+      BECAUSE THIS IS A NEWLY FOUND, WICKED STYLE
+      
+      AND SOMEPNES GOT TO PUT IT DOWN!
+      
+      YOU LIVE YOUR LIFE EVERY DAY!
+      
+      THEY TREAT YOU LIKE A FAKE!
+      
+      SAME PLACE DIFFERENT FATE! NOBODYS DIFFERENT MAYN!
+      
+      CHECK YOUR WAYS! ABOUT FACE! AND MAKE THEM GIVE BACK THE RESPECT!
+      
+      GET UP YOUR SEAT! AND DONT GIVE UP! YOU GOTTA GET BACK UP! JUST LISTEN TO ME
+      
+      IF YA READY TO GO OR NOT THAT PISTOL BECAUSE THEY ALREADY KNOW!
+      
+      FOR A NEW LIFE! A NEW BEGININNG!
+      </pre>
+
+      <a style="float:left;" name="energy"></a>
+      <h2>Energy (demo)</h2>
+      <pre>
+      I got the Energy
+      I know you feelin me
+      and whats got into me will never be the same again!
+      Bringing me down
+      look at me now
+      will i ever see the days go by
+      and the times 
+      where we would not have to lie!
+      Noooo!
+      Ive got the power to make the sun rise
+      and when the sun dies 
+      it gets washed by the tides
+      do you realize!?
+      I have the power
+      I have the power inside!
+      
+      This feeling Inside that Dwells!
+      This feeling cant be denied!
+      
+      So take a look in yourself 
+      then you will realize!
+      
+      Understand this is a major feel
+      over rise everyone on the battlefeild!
+      The battles here!
+      Destined! For the ones that need change!
+      For the ones that need help up from the rain!
+      The sorrow and pain 
+      you really hopin for new!
+      Change the ways to fall into the fuel!
+      The wrath of acceptance!
+      The reason to get in!
+      The reason to fit in!
+      The real reason of RAW ENERGYYYYYYYYYY!
+      
+      
+      This feeling Inside that Dwells!
+      This feeling cant be denied!
+      
+      So take a look in yourself 
+      then you will realize!
+      
+      that is!
+      That is true!
+      
+      Its The Energy!
+      Now that im destined for home bound!
+      Destined for a body like me!
+      Wrapped in all around!
+      If you have any VengaNCE!
+      Why dont you take it from me!
+      Take this reason leisure!
+      Something that will set you free!
+      
+      Now that you hope for a new!
+      Change the ways to fall into the fuel!
+      The wrath of acceptance!
+      The reason to get in!
+      The reason to fit in!
+      The real reason of RAW ENERGYYYYYYYYYY!
+      
+      This phenom inside IT DWELLS!
+      This feeling cant be DENIED!
+      So Take a look at YOURSELF 
+      SO TAKE A LOOK AT YOUYRSELF!
+      </pre>
+
+    </div>
+  </div>
+  <div id="Shows" class="content">
+    <style>
+      table tr td {
+        vertical-align: top;
+      }
+    </style>
+    <table style="width:400px; margin:0 auto;">
+      <tr>
+        <td class="venue"><a
+            href="https://www.google.com/maps/preview#!q=club+heat%2C+beaumont%2C+tx&data=!4m15!2m14!1m13!1s0x863934c911d9bffd%3A0xe3815792ab6cd3bc!3m8!1m3!1d10369056!2d-100.0768425!3d31.1689339!3m2!1i1920!2i1139!4f13.1!4m2!3d30.096862!4d-94.12694">Club
+            Heat (Super Mario Bros SUPER TOUR!!!)</a></td>
+        <td class="location">(Beaumont, Tx)</td>
+        <td class="date">11/14/2013</td>
+      </tr>
+      <tr>
+        <td class="venue"><a
+            href="http://maps.google.com/maps?q=star+bar,+Beaumont,+TX&hl=en&ll=30.08394,-94.098981&spn=0.001481,0.001725&sll=30.078861,-94.106097&sspn=0.011846,0.013797&t=h&hq=star+bar,&hnear=Beaumont,+Jefferson,+Texas&z=19&layer=c&cbll=30.084046,-94.099093&panoid=dhDuRk6q8DKcIyNd39Zg9w&cbp=12,51.28,,0,4.34">Tequila
+            Rok</a></td>
+        <td class="location">(Beaumont, Tx)</td>
+        <td class="date">10/18/2013</td>
+      </tr>
+      <tr>
+      <tr>
+      <tr>
+        <td class="venue"><a
+            href="http://maps.google.com/maps?q=star+bar,+Beaumont,+TX&hl=en&ll=30.08394,-94.098981&spn=0.001481,0.001725&sll=30.078861,-94.106097&sspn=0.011846,0.013797&t=h&hq=star+bar,&hnear=Beaumont,+Jefferson,+Texas&z=19&layer=c&cbll=30.084046,-94.099093&panoid=dhDuRk6q8DKcIyNd39Zg9w&cbp=12,51.28,,0,4.34">The
+            Gig</a></td>
+        <td class="location">(Beaumont, Tx)</td>
+        <td class="date">07/20/2012</td>
+      </tr>
+      <tr>
+        <td class="venue"><a
+            href="http://maps.google.com/maps?q=star+bar,+Beaumont,+TX&hl=en&ll=30.08394,-94.098981&spn=0.001481,0.001725&sll=30.078861,-94.106097&sspn=0.011846,0.013797&t=h&hq=star+bar,&hnear=Beaumont,+Jefferson,+Texas&z=19&layer=c&cbll=30.084046,-94.099093&panoid=dhDuRk6q8DKcIyNd39Zg9w&cbp=12,51.28,,0,4.34">Tequila
+            Rok</a></td>
+        <td class="location">(Beaumont, Tx)</td>
+        <td class="date">04/27/2012</td>
+      </tr>
+      <tr>
+        <td class="venue"><a
+            href="http://maps.google.com/maps?q=riverside+tavern,+port+neches,+tx&hl=en&sll=29.993082,-93.947234&sspn=0.364546,0.441513&hq=riverside+tavern,&hnear=Port+Neches,+Jefferson,+Texas&t=m&z=15">Riverside
+            Tavern</a></td>
+        <td class="location">(Port Neches, Tx)</td>
+        <td class="date">04/13/2012</td>
+      </tr>
+    </table>
+  </div>
+  <div id="Gear" class="content">
+    <div class="space jenova-white">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="form-bg"> <input type="hidden"
+          name="cmd" value="_s-xclick"> <input type="hidden" name="hosted_button_id" value="YGJFVVU3RGLGG"> <input
+          type="hidden" name="on0" value="Jenova (White)"> <span class="span-white">Select your size...</span> <select
+          name="os0" class="select-white">
+          <option></option>
+          <option value="White (S) --- $20.00">White (S) --- $20.00 </option>
+          <option value="White (M) --- $20.00">White (M) --- $20.00 </option>
+          <option value="White (L) --- $20.00">White (L) --- $20.00 </option>
+          <option value="White (XL) --- $20.00">White (XL) --- $20.00 </option>
+        </select> <input type="submit" class="buy-now" /> </form>
+    </div>
+    <div class="space jenova-black">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="form-bg"> <input type="hidden"
+          name="cmd" value="_s-xclick"> <input type="hidden" name="hosted_button_id" value="ZKTAQXLCW2PG8"> <input
+          type="hidden" name="on0" value="Jenova (Black)"> <span class="span-black">Select your size...</span> <select
+          name="os0" class="select-black">
+          <option></option>
+          <option value="Black (S) --- $20.00">Black (S) --- $20.00 </option>
+          <option value="Black (M) --- $20.00">Black (M) --- $20.00 </option>
+          <option value="Black (L) --- $20.00">Black (L) --- $20.00 </option>
+          <option value="Black (XL) --- $20.00">Black (XL) --- $20.00 </option>
+        </select> <input type="submit" class="buy-now" /> </form>
+    </div>
+    <div class="space jenova-pink">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="form-bg"> <input type="hidden"
+          name="cmd" value="_s-xclick"> <input type="hidden" name="hosted_button_id" value="54CXPK42F34X8"> <input
+          type="hidden" name="on0" value="Jenova (Pink)"> <span class="span-pink">Select your size...</span> <select
+          name="os0" class="select-pink">
+          <option></option>
+          <option value="Pink (S) --- $20.00">Pink (S) --- $20.00 </option>
+          <option value="Pink (M) --- $20.00">Pink (M) --- $20.00 </option>
+          <option value="Pink (L) --- $20.00">Pink (L) --- $20.00 </option>
+          <option value="Pink (XL) --- $20.00">Pink (XL) --- $20.00 </option>
+        </select> <input type="submit" class="buy-now" /> </form>
+    </div>
+    <div class="space jenova-blue">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="form-bg"> <input type="hidden"
+          name="cmd" value="_s-xclick"> <input type="hidden" name="hosted_button_id" value="9XBTMXBAWB4JG"> <input
+          type="hidden" name="on0" value="Jenova (Blue)"> <span class="span-blue">Select your size...</span> <select
+          name="os0" class="select-blue">
+          <option></option>
+          <option value="Blue (S) --- $20.00">Blue (S) --- $20.00 </option>
+          <option value="Blue (M) --- $20.00">Blue (M) --- $20.00 </option>
+          <option value="Blue (L) --- $20.00">Blue (L) --- $20.00 </option>
+          <option value="Blue (XL) --- $20.00">Blue (XL) --- $20.00 </option>
+        </select> <input type="submit" class="buy-now" /> </form>
+    </div>
+  </div>
+  <div id="Booking" class="content">
+    
+    <div id="Contact">
+      <form method="post" action="forms-contact.php" style="padding-left:150px;">
+                  
+          <div>
+              <input type="text" title="Full Name" value="Full Name" name="name" onFocus="inputFocus(this)" onBlur="inputBlur(this)" />
+              <input type="text" title="Phone Number" value="Phone Number" name="phone" onFocus="inputFocus(this)" onBlur="inputBlur(this)" />
+              <input type="text" title="Email" value="Email" name="email" onFocus="inputFocus(this)" onBlur="inputBlur(this)" />
+          </div>
+            
+            <div>
+              <textarea name="details" title="Write message..."></textarea>
+            </div>
+            
+            <p class="clear"></p>
+            
+            <div style="padding-left:102px; width:300px; height:50px; padding-top:10px;">
+                <input type="reset" class="clear" value="clear" />
+                <input type="submit" class="submit" value="submit" />
+            </div>
+            
+        </form>
+    </div>
+  </div>
+
+    <div class="bg-controller">
+    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+    <div id="jp_container_1">
+      <div id="Controller">
+        <div class="bg-controls">
+          <ul class="jp-controls">
+            <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+            <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+            <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+            <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+          </ul>
+          <div class="jp-progress">
+            <div class="jp-seek-bar">
+              <div class="jp-play-bar"></div>
+            </div>
+          </div><!-- <div class="jp-volume-bar"> <div class="jp-volume-bar-value"></div></div>-->
+          <div class="jp-time-holder" style="width:192px; position:absolute; top:28px; left:97px; height:10px;">
+            <div class="jp-current-time"
+              style="display:inline; float:left; font-size:8px; margin:0; padding:0; color:#4a8cad;"></div>
+            <div class="jp-duration"
+              style="display:inline; float:right; font-size:8px; margin:0; padding:0; color:#4a8cad;"></div>
+          </div>
+          <div class="jp-toggles" style="display:block;"> <a href="javascript:;" class="jp-shuffle" tabindex="1"
+              title="shuffle">shuffle</a> <a href="javascript:;" class="jp-shuffle-off" tabindex="1"
+              title="shuffle off">shuffle off</a> <a href="javascript:;" class="jp-repeat" tabindex="1"
+              title="repeat">repeat</a> <a href="javascript:;" class="jp-repeat-off" tabindex="1"
+              title="repeat off">repeat off</a> </div>
+        </div>
+        <div class="jp-playlist" id="JPplaylist">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
